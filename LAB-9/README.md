@@ -19,7 +19,7 @@ Create a New Workspace
 
 step-1:Check that no workspace other than the default one currently exists:
 
-terraform workspace list
+    terraform workspace list
 
 step-2:Create a new workspace named test, using the command terraform workspace new test.
 
@@ -59,8 +59,12 @@ step-2:View the contents of the main.tf file using the cat command:
 step-3:Note the configurations in the main.tf code, particularly:
 
 AWS is the selected provider.
+
 If the code is deployed on the default workspace, the resources will be deployed in the us-east-1 region.
+
+
 If the code is deployed on any other workspace, the resources will be deployed in the us-west-2 region.
+
 In the code creating the EC2 virtual machine, we have embedded the $terraform.workspace variable in the Name attribute, so we can easily distinguish those resources when they are created within their respective workspaces by their name: <workspace name>-ec2.
 
 step-4:View the contents of the network.tf file:
@@ -70,14 +74,16 @@ step-4:View the contents of the network.tf file:
 step-5:Note the configurations in the network.tf code, particularly:
 
 In the code creating the security group resource, we have embedded the $terraform.workspace variable in the Name attribute, so we can easily distinguish those resources when they are created within their respective workspaces by their name: <workspace name>-securitygroup.
-step-6:Deploy the code in the test workspace:
+
+  step-6:Deploy the code in the test workspace:
 
    terraform apply --auto-approve
   
 step-7:Once the code has executed successfully, confirm that Terraform is tracking resources in this workspace:
 
      terraform state list
-There should be a number of resources being tracked, including the resources spun up by the code just deployed.
+
+  There should be a number of resources being tracked, including the resources spun up by the code just deployed.
 
 step-8:Switch over to the default workspace:
 
@@ -85,7 +91,8 @@ step-8:Switch over to the default workspace:
 step-9:Confirm that Terraform is currently not tracking any resources in this workspace, as nothing has been deployed:
 
       terraform state list
-The return output should say that No state file was found! for this workspace.
+
+  The return output should say that No state file was found! for this workspace.
 
 step-10:Verify that the deployment in the test workspace was successful by viewing the resources that were created in the AWS Management Console:
 
@@ -101,15 +108,16 @@ Deploy Infrastructure in the Default Workspace and Confirm Deployment via AWS
   
 step-1:Back in the CLI, verify that you are still within the default workspace:
 
-terraform workspace list
-Again, the asterisk (*) prepended to the name confirms you are in the default workspace.
+     terraform workspace list
+
+  Again, the asterisk (*) prepended to the name confirms you are in the default workspace.
 
 Deploy the code again, this time in the default workspace:
 
-terraform apply --auto-approve
+     terraform apply --auto-approve
 Once the code has executed successfully, confirm that Terraform is now tracking resources in this workspace:
 
-terraform state list
+     terraform state list
 There should now be a number of resources being tracked, including the resources spun up by the code just deployed.
 
 Verify that the deployment in the default workspace was successful by viewing the resources that were created in the AWS Management Console:
@@ -126,10 +134,12 @@ Destroy Resources in the Test Workspace and Delete the Workspace
 step-1:Back in the CLI, switch over to the test workspace:
 
     terraform workspace select test
-step-2:Tear down the infrastructure you just created in the test workspace:
+
+  step-2:Tear down the infrastructure you just created in the test workspace:
 
      terraform destroy --auto-approve
-step-3:Verify that the resources were terminated in the AWS Management Console:
+
+  step-3:Verify that the resources were terminated in the AWS Management Console:
 
 Navigate to the AWS Management Console in your browser.
 Click on N. Virginia (the us-east-1 region) at the top-right to engage the Region drop-down, and select US West (Oregon), or us-west-2.
@@ -140,7 +150,8 @@ Verify that the test-securitygroup resource no longer appears in the list.
 step-4:Back in the CLI, switch over to the default workspace:
 
      terraform workspace select default
-step-5:Delete the test workspace:
+
+  step-5:Delete the test workspace:
 
      terraform workspace delete test
 
