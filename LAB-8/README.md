@@ -29,8 +29,8 @@ Once the command has completed, note that Terraform returns the output main.tf, 
 
 step-3: View the contents of the the main.tf file again:
 
-    cat main.tf
-    ![image](https://user-images.githubusercontent.com/103553658/172042239-75f8c1e2-f954-4435-a4c5-5038f5ec65e1.png)
+ cat main.tf
+ ![image](https://user-images.githubusercontent.com/103553658/172042239-75f8c1e2-f954-4435-a4c5-5038f5ec65e1.png)
     
     Notice that the code has now been formatted cleanly and consistently.
 
