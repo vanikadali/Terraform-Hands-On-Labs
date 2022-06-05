@@ -1,14 +1,21 @@
 installing Terraform and Working with Terraform Providers
 
 step-1: Download And Manually Install the Terraform Binary by using following steps
+    
     2  sudo apt update
+    
     3  sudo apt-get install unzip
+    
     4  wget https://releases.hashicorp.com/terraform/1.0.7/terraform_1.0.7_linux_amd64.zip
+    
     5  unzip terraform_1.0.7_linux_amd64.zip
+    
     6  sudo mv terraform /usr/local/bin/
+    
     7  terraform --version
     
 step-2: Clone Over Code for Terraform Providers
+
 Create a provider directory:
 
      mkdir provider
