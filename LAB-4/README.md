@@ -78,15 +78,19 @@ step-3:Edit the ami in the main.tf file
   
   step-7: Apply line numbering to the file so you can identify the           error more     easily:
       :set number
-  step-8:Update line 25 as follows to correct the variable      
+ 
+    step-8:Update line 25 as follows to correct the variable      
    interpolation error:
       Name = "${var.name}-learn"
-step-9:Write and quit to save your changes:
+
+    step-9:Write and quit to save your changes:
      :wq!
-step-10:Attempt to format the files again:
+
+    step-10:Attempt to format the files again:
      terraform fmt
 This time, you should be successful.
-step-11:Initialize your working directory:
+
+    step-11:Initialize your working directory:
      terraform 
   
   
