@@ -58,9 +58,9 @@ View the content of main.tf file:
 
      tags = {
        Name = "Terraform-Dynamic-SG"
-     }
+       }
   
-   }
+    }
 
     resource "aws_instance" "my-instance" {
      ami             = data.aws_ssm_parameter.ami_id.value
@@ -69,5 +69,5 @@ View the content of main.tf file:
      security_groups = [aws_security_group.my-sg.id]
      user_data       = fileexists("script.sh") ? file("script.sh") : null
 
-   }
+    }
 
