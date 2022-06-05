@@ -59,6 +59,7 @@ View the content of main.tf file:
      tags = {
        Name = "Terraform-Dynamic-SG"
      }
+  
    }
 
     resource "aws_instance" "my-instance" {
@@ -67,5 +68,6 @@ View the content of main.tf file:
      instance_type   = "t3.micro"
      security_groups = [aws_security_group.my-sg.id]
      user_data       = fileexists("script.sh") ? file("script.sh") : null
-  }
+
+   }
 
