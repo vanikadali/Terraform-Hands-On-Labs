@@ -7,11 +7,11 @@ step-1:Clone the required code from the provided repository:
 
 step-2:Switch to the directory where the code is located:
 
-   cd content-hashicorp-certified-terraform-associate-foundations/section4-lesson3/
+      cd content-hashicorp-certified-terraform-associate-foundations/section4-lesson3/
 
 step-3:List the files in the directory:
 
-   ls
+     ls
 
 The files in the directory should include main.tf and network.tf. These files basically use the ${terraform.workspace} variable to create parallel environments and decide which region the deployment occurs in, depending on the workspace you're in.
 
@@ -70,24 +70,26 @@ In the code creating the EC2 virtual machine, we have embedded the $terraform.wo
 step-4:View the contents of the network.tf file:
 
   
-  cat network.tf
+     cat network.tf
+
 step-5:Note the configurations in the network.tf code, particularly:
 
 In the code creating the security group resource, we have embedded the $terraform.workspace variable in the Name attribute, so we can easily distinguish those resources when they are created within their respective workspaces by their name: <workspace name>-securitygroup.
 
-  step-6:Deploy the code in the test workspace:
+step-6:Deploy the code in the test workspace:
 
-   terraform apply --auto-approve
+      terraform apply --auto-approve
   
 step-7:Once the code has executed successfully, confirm that Terraform is tracking resources in this workspace:
 
-     terraform state list
+       terraform state list
 
   There should be a number of resources being tracked, including the resources spun up by the code just deployed.
 
 step-8:Switch over to the default workspace:
 
-     terraform workspace select default
+       terraform workspace select default
+
 step-9:Confirm that Terraform is currently not tracking any resources in this workspace, as nothing has been deployed:
 
       terraform state list
