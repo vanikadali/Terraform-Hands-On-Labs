@@ -58,8 +58,8 @@ View the content of main.tf file:
 
      tags = {
        Name = "Terraform-Dynamic-SG"
-    }
-  }
+     }
+   }
 
     resource "aws_instance" "my-instance" {
      ami             = data.aws_ssm_parameter.ami_id.value
