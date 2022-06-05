@@ -37,7 +37,7 @@ View the content of main.tf file:
     }
 
 
-   resource "aws_security_group" "my-sg" {
+      resource "aws_security_group" "my-sg" {
        vpc_id = module.vpc.vpc_id
        name   = join("_", ["sg", module.vpc.vpc_id])
       dynamic "ingress" {
