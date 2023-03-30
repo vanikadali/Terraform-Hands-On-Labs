@@ -1,0 +1,54 @@
+{
+  "version": 4,
+  "terraform_version": "1.2.5",
+  "serial": 79,
+  "lineage": "4b93fb01-3b0f-f1f8-65ef-ad6a0a6ee1ba",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "data",
+      "type": "aws_sns_topic",
+      "name": "example",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:sns:us-east-1:815325600979:mytopic",
+            "id": "arn:aws:sns:us-east-1:815325600979:mytopic",
+            "name": "mytopic"
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_s3_bucket_versioning",
+      "name": "versioning_example",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "bucket": "dataupload-bucket",
+            "expected_bucket_owner": "",
+            "id": "dataupload-bucket",
+            "mfa": null,
+            "versioning_configuration": [
+              {
+                "mfa_delete": "",
+                "status": "Enabled"
+              }
+            ]
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_s3_bucket.example"
+          ]
+        }
+      ]
+    }
+  ]
+}

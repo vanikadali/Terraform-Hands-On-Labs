@@ -1,0 +1,231 @@
+{
+  "version": 4,
+  "terraform_version": "1.2.5",
+  "serial": 75,
+  "lineage": "4b93fb01-3b0f-f1f8-65ef-ad6a0a6ee1ba",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "data",
+      "type": "aws_sns_topic",
+      "name": "example",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:sns:us-east-1:815325600979:mytopic",
+            "id": "arn:aws:sns:us-east-1:815325600979:mytopic",
+            "name": "mytopic"
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "example",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": "private",
+            "arn": "arn:aws:s3:::dataupload-bucket",
+            "bucket": "dataupload-bucket",
+            "bucket_domain_name": "dataupload-bucket.s3.amazonaws.com",
+            "bucket_prefix": null,
+            "bucket_regional_domain_name": "dataupload-bucket.s3.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": false,
+            "grant": [],
+            "hosted_zone_id": "Z3AQBSTGFYJSTF",
+            "id": "dataupload-bucket",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": null,
+            "region": "us-east-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "name": "vannnn"
+            },
+            "tags_all": {
+              "name": "vannnn"
+            },
+            "versioning": [
+              {
+                "enabled": true,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": "",
+            "website_endpoint": ""
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_s3_bucket_acl",
+      "name": "example",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access_control_policy": [
+              {
+                "grant": [
+                  {
+                    "grantee": [
+                      {
+                        "display_name": "lab+LabServices-Prod-6725",
+                        "email_address": "",
+                        "id": "1b816c3fc1d6108d6d4e07de815991e900ffc20973b5d033913ff49d7ffc944d",
+                        "type": "CanonicalUser",
+                        "uri": ""
+                      }
+                    ],
+                    "permission": "FULL_CONTROL"
+                  }
+                ],
+                "owner": [
+                  {
+                    "display_name": "lab+LabServices-Prod-6725",
+                    "id": "1b816c3fc1d6108d6d4e07de815991e900ffc20973b5d033913ff49d7ffc944d"
+                  }
+                ]
+              }
+            ],
+            "acl": "public-read",
+            "bucket": "dataupload-bucket",
+            "expected_bucket_owner": "",
+            "id": "dataupload-bucket,public-read"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_s3_bucket_object",
+      "name": "singleobject",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acl": "public-read-write",
+            "bucket": "dataupload-bucket",
+            "bucket_key_enabled": false,
+            "cache_control": "",
+            "content": null,
+            "content_base64": null,
+            "content_disposition": "",
+            "content_encoding": "",
+            "content_language": "",
+            "content_type": "binary/octet-stream",
+            "etag": "e017b862d81f99b314b6e897eb8ac6cb",
+            "force_destroy": false,
+            "id": "arn:aws:sns:us-east-1:815325600979:mytopic",
+            "key": "arn:aws:sns:us-east-1:815325600979:mytopic",
+            "kms_key_id": null,
+            "metadata": {},
+            "object_lock_legal_hold_status": "",
+            "object_lock_mode": "",
+            "object_lock_retain_until_date": "",
+            "server_side_encryption": "AES256",
+            "source": "C:\\Users\\Vani_Kadali\\Desktop\\index.html",
+            "source_hash": null,
+            "storage_class": "STANDARD",
+            "tags": {},
+            "tags_all": {},
+            "version_id": "VABGym2ltII.CQUEkROZPeaEpwwjkOid",
+            "website_redirect": ""
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "data.aws_sns_topic.example"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_s3_bucket_public_access_block",
+      "name": "access-block",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "block_public_acls": false,
+            "block_public_policy": false,
+            "bucket": "dataupload-bucket",
+            "id": "dataupload-bucket",
+            "ignore_public_acls": false,
+            "restrict_public_buckets": false
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_s3_bucket.example"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_s3_bucket_versioning",
+      "name": "versioning_example",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "bucket": "dataupload-bucket",
+            "expected_bucket_owner": "",
+            "id": "dataupload-bucket",
+            "mfa": null,
+            "versioning_configuration": [
+              {
+                "mfa_delete": "",
+                "status": "Enabled"
+              }
+            ]
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_s3_bucket.example"
+          ]
+        }
+      ]
+    }
+  ]
+}
